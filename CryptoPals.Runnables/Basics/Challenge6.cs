@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using CryptoPals.Basics;
-using CryptoPals.Basics.Conversions;
 using CryptoPals.Basics.XOR;
 
 namespace CryptoPals.Runnables.Basics
@@ -16,14 +14,11 @@ namespace CryptoPals.Runnables.Basics
         public void Run(string[] args)
         {
             if (args.Length != 1)
-                throw new ArgumentException("Please provide a single path to a file with newline-separated hex" +
-                                            "strings to guess the encoding of.");
+                throw new ArgumentException("Please provide a single path to a base64-encoded file" +
+                                            "to guess the encoding of.");
 
             string filePath = args.Single();
-            byte[] ciphertext = File.ReadAllText(filePath)
-                .Replace("\r", "")
-                .Replace("\n", "")
-                .FromBase64();
+            byte[] ciphertext = Base64File.Read(filePath);
 
             int[] estimatedKeySizes = GuessKeySize(ciphertext);
 

@@ -363,3 +363,7 @@ FodyWeavers.xsd
 
 # don't really care about rider config either
 .idea/**
+
+# don't commit data files that I have locally.
+# don't own em, don't commit em.
+data/**

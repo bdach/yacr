@@ -7,9 +7,9 @@ namespace CryptoPals.Basics
     {
         public ICollection<Guess> TryFindPlaintext(byte[] ciphertext)
         {
-            // for now just manually try against every letter (lower- and uppercase).
-            IEnumerable<byte> candidateKeys = Enumerable.Range('A', 'Z' - 'A' + 1)
-                .Concat(Enumerable.Range('a', 'z' - 'a' + 1))
+            // skip the non-printables, try everything else.
+            IEnumerable<byte> candidateKeys = Enumerable.Range(0, 256)
+                .Skip(32)
                 .Select(i => (byte)i);
 
             var guesses = new List<Guess>();

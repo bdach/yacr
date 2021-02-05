@@ -44,11 +44,9 @@ namespace CryptoPals.Runnables.Basics
 
             foreach (var guessForString in sortedByBestGuess)
             {
-                string printablePlaintext = new string(guessForString.Value.First().Plaintext
-                    .Where(c => c >= 32)
-                    .ToArray());
+                var bestGuess = guessForString.Value.First();
                 Console.WriteLine(
-                    $"{guessForString.Key.PadRight(60)} | {guessForString.Value.First().Key.ToString().PadLeft(3)} | {printablePlaintext.PadRight(40)} | {guessForString.Value.First().Score,10:0.0000}");
+                    $"{guessForString.Key.PadRight(60)} | {bestGuess.Key.ToString().PadLeft(3)} | {bestGuess.Plaintext.AsPrintable().PadRight(40)} | {bestGuess.Score,10:0.0000}");
             }
         }
     }

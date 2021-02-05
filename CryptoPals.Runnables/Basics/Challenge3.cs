@@ -32,11 +32,8 @@ namespace CryptoPals.Runnables.Basics
 
             foreach (var guess in guesses)
             {
-                string printablePlaintext = new string(guess.Plaintext
-                    .Where(c => c >= 32)
-                    .ToArray());
                 Console.WriteLine(
-                    $"{guess.Key.ToString().PadLeft(3)} | {printablePlaintext.PadRight(40)} | {guess.Score,10:0.0000}");
+                    $"{guess.Key.ToString().PadLeft(3)} | {guess.Plaintext.AsPrintable().PadRight(40)} | {guess.Score,10:0.0000}");
             }
         }
     }

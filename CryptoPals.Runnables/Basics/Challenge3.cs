@@ -1,13 +1,16 @@
 using System;
 using System.Linq;
 using CryptoPals.Basics;
+using JetBrains.Annotations;
 
 namespace CryptoPals.Runnables.Basics
 {
     // https://cryptopals.com/sets/1/challenges/3
-    public static class Challenge3
+    [Runnable(3)]
+    [UsedImplicitly]
+    public class Challenge3 : IRunnable
     {
-        public static void Main(string[] args)
+        public void Run(string[] args)
         {
             if (args.Length != 1)
                 throw new ArgumentException("Please provide a single hex-encoded string to guess the encoding of.");

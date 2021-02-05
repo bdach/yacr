@@ -1,6 +1,7 @@
+using CryptoPals.Basics.Conversions;
 using NUnit.Framework;
 
-namespace CryptoPals.Tests
+namespace CryptoPals.Tests.Basics
 {
     // https://cryptopals.com/sets/1/challenges/1
     [TestFixture]

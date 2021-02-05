@@ -1,6 +1,4 @@
-using System;
-
-namespace CryptoPals
+namespace CryptoPals.Basics.XOR
 {
     public static class RepeatingKeyXOR
     {

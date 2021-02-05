@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace CryptoPals
+namespace CryptoPals.Basics.Conversions
 {
     public static class HexStringExtensions
     {

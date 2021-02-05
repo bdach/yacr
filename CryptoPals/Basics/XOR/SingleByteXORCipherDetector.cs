@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CryptoPals.Basics
+namespace CryptoPals.Basics.XOR
 {
     public class SingleByteXORCipherDetector
     {

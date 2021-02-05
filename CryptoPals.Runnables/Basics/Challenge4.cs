@@ -1,7 +1,8 @@
 using System;
 using System.IO;
 using System.Linq;
-using CryptoPals.Basics;
+using CryptoPals.Basics.Conversions;
+using CryptoPals.Basics.XOR;
 using JetBrains.Annotations;
 
 namespace CryptoPals.Runnables.Basics

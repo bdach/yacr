@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CryptoPals
+namespace CryptoPals.Basics.Conversions
 {
     public static class Base64Extensions
     {

@@ -3,13 +3,11 @@ using System.IO;
 using System.Linq;
 using CryptoPals.Basics.Conversions;
 using CryptoPals.Basics.XOR;
-using JetBrains.Annotations;
 
 namespace CryptoPals.Runnables.Basics
 {
     // https://cryptopals.com/sets/1/challenges/4
     [Runnable(4)]
-    [UsedImplicitly]
     public class Challenge4 : IRunnable
     {
         public void Run(string[] args)

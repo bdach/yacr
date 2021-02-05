@@ -6,13 +6,11 @@ using System.Text;
 using CryptoPals.Basics;
 using CryptoPals.Basics.Conversions;
 using CryptoPals.Basics.XOR;
-using JetBrains.Annotations;
 
 namespace CryptoPals.Runnables.Basics
 {
     // https://cryptopals.com/sets/1/challenges/6
     [Runnable(6)]
-    [MeansImplicitUse]
     public class Challenge6 : IRunnable
     {
         public void Run(string[] args)

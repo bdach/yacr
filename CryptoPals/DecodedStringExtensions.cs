@@ -1,10 +1,9 @@
 using System.Linq;
 
-namespace CryptoPals
+namespace CryptoPals;
+
+public static class DecodedStringExtensions
 {
-    public static class DecodedStringExtensions
-    {
-        public static string AsPrintable(this string s)
-            => new(s.Where(c => c >= 32).ToArray());
-    }
+    public static string AsPrintable(this string s)
+        => new(s.Where(c => c >= 32).ToArray());
 }

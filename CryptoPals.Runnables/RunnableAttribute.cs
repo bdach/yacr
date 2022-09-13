@@ -1,25 +1,24 @@
 using System;
 using JetBrains.Annotations;
 
-namespace CryptoPals.Runnables
+namespace CryptoPals.Runnables;
+
+[AttributeUsage(AttributeTargets.Class, Inherited = false)]
+[MeansImplicitUse]
+public class RunnableAttribute : Attribute
 {
-    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
-    [MeansImplicitUse]
-    public class RunnableAttribute : Attribute
+    public int Id { get; }
+
+    public RunnableAttribute(int id)
     {
-        public int Id { get; }
+        Id = id;
+    }
 
-        public RunnableAttribute(int id)
-        {
-            Id = id;
-        }
+    public override bool Match(object? obj)
+    {
+        if (obj is int id)
+            return Id == id;
 
-        public override bool Match(object? obj)
-        {
-            if (obj is int id)
-                return Id == id;
-
-            return base.Match(obj);
-        }
+        return base.Match(obj);
     }
 }

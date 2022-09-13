@@ -1,7 +1,5 @@
 using System;
-using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 
 namespace CryptoPals.Runnables.Basics
@@ -17,20 +15,9 @@ namespace CryptoPals.Runnables.Basics
 
             string filePath = args.Single();
             byte[] ciphertext = Base64File.Read(filePath);
-            const int keySize = 128;
 
-            // not sure this'll be worth wrapping into a class, so let's just use what C# provides raw.
-            using var aes = Aes.Create();
-            aes.Mode = CipherMode.ECB;
-            aes.KeySize = keySize;
-            aes.Key = Encoding.ASCII.GetBytes("YELLOW SUBMARINE");
-
-            using var memoryStream = new MemoryStream(ciphertext);
-            using var decryptor = aes.CreateDecryptor();
-            using var cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
-            using var streamReader = new StreamReader(cryptoStream);
-
-            Console.WriteLine($"The plaintext is:\n{streamReader.ReadToEnd()}");
+            byte[] decryptedBytes = MyAes.DecryptEcb(ciphertext, Encoding.ASCII.GetBytes("YELLOW SUBMARINE"));
+            Console.WriteLine($"The plaintext is:\n{Encoding.ASCII.GetString(decryptedBytes)}");
         }
     }
 }

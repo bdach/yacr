@@ -111,4 +111,7 @@ public static class MyAes
     }
 
     #endregion
+
+    public static byte[] GetRandomKey(int byteCount)
+        => RandomNumberGenerator.GetBytes(byteCount);
 }
